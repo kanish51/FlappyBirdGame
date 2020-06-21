@@ -33,11 +33,9 @@ public class PlayState extends State {
         bird=new Bird(30,380);
         bg=new Texture("bg.png");
         ground=new Texture("ground.png");
-        scoreLabel=new Label("Score: "+String.valueOf(0),new Label.LabelStyle(new BitmapFont(Gdx.files.internal("yeh.fnt")), Color.WHITE));
-        scoreLabel.setFontScale(0.5f,0.5f);
-        scoreLabel.setPosition((FlappyDemo.WIDTH)/2f+(scoreLabel.getWidth()/2),(FlappyDemo.HEIGHT)-60);
-        cam.setToOrtho(false, FlappyDemo.WIDTH/2,FlappyDemo.HEIGHT/2);
+        scoreLabel=new Label("Score: "+String.valueOf(0),new Label.LabelStyle(new BitmapFont(Gdx.files.internal("yeh2.fnt")), Color.WHITE));
         stagePlay = new Stage(new ScreenViewport());
+        cam.setToOrtho(false, FlappyDemo.WIDTH/2,FlappyDemo.HEIGHT/2);
         groundPos1=new Vector2(cam.position.x - cam.viewportWidth / 2, GROUND_Y_OFFSET);;
         groundPos2=new Vector2((cam.position.x - cam.viewportWidth / 2) + ground.getWidth(), GROUND_Y_OFFSET);
         tubes = new Array<Tube>();

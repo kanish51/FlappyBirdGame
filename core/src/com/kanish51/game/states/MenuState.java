@@ -26,13 +26,12 @@ public class MenuState extends State {
         super(gsm);
         background=new Texture("bg.png");
         welcome=new Texture("welcome.png");
-        label=new Label("High Score: "+String.valueOf(score),new Label.LabelStyle(new BitmapFont(Gdx.files.internal("yeh.fnt")), Color.WHITE));
-        label.setFontScale(0.5f,0.5f);
-        label.setPosition((FlappyDemo.WIDTH/2f)-(label.getWidth()/4),(FlappyDemo.HEIGHT/4f));
+        stage = new Stage(new ScreenViewport(cam));
         cam.setToOrtho(false, FlappyDemo.WIDTH/2,FlappyDemo.HEIGHT/2);
         button = new ImageButton(new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("playbtn.png")))));
-        stage = new Stage(new ScreenViewport());
-        button.setPosition((FlappyDemo.WIDTH/2f)-(button.getWidth()/2),FlappyDemo.HEIGHT/2);
+        button.setPosition(cam.position.x-(button.getWidth()/2),cam.position.y);
+        label=new Label("High Score: "+String.valueOf(score),new Label.LabelStyle(new BitmapFont(Gdx.files.internal("yeh1.fnt")), Color.WHITE));
+        label.setPosition(cam.position.x-(label.getWidth()/2),cam.position.y/2);
         button.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
