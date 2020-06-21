@@ -25,7 +25,7 @@ public class FlappyDemo extends ApplicationAdapter {
 		music.setVolume(0.1f);
 		music.play();
 		Gdx.gl.glClearColor(1, 0, 0, 1);
-		gsm.push(new MenuState(gsm));
+		gsm.push(new MenuState(gsm,0));
 	}
 
 	@Override
