@@ -36,6 +36,7 @@ public class PlayState extends State {
         scoreLabel=new Label("Score: "+String.valueOf(0),new Label.LabelStyle(new BitmapFont(Gdx.files.internal("yeh2.fnt")), Color.WHITE));
         stagePlay = new Stage(new ScreenViewport());
         cam.setToOrtho(false, FlappyDemo.WIDTH/2,FlappyDemo.HEIGHT/2);
+        scoreLabel.setPosition(cam.position.x,0);
         groundPos1=new Vector2(cam.position.x - cam.viewportWidth / 2, GROUND_Y_OFFSET);;
         groundPos2=new Vector2((cam.position.x - cam.viewportWidth / 2) + ground.getWidth(), GROUND_Y_OFFSET);
         tubes = new Array<Tube>();
